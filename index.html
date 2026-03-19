@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'><title>QI_NODE | Rapid-Output-Generator</title>
+<link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=JetBrains+Mono:wght@500&display=swap' rel='stylesheet'>
+<style>
+:root{--p:#ff0055;--bg:#000;}
+body,html{ margin:0; background:#000; color:#fff; font-family:'JetBrains Mono'; overflow:hidden; }
+canvas{ position:fixed; inset:0; z-index:1; opacity:0.5; }
+.hud{ position:fixed; top:40px; left:40px; z-index:100; border-left:2px solid var(--p); padding-left:20px; background:rgba(0,0,0,0.9); width:400px; }
+.role-tag{ font-family:'Orbitron'; font-size:12px; color:var(--p); letter-spacing:3px; margin-bottom:10px; }
+</style>
+</head>
+<body>
+<canvas id='c'></canvas>
+<div class='hud'>
+    <div class='role-tag'>ROLE: HIGH_VELOCITY_MANIFESTATION</div>
+    <div style='font-size:10px; opacity:0.7;'>Scales intelligence density through sub-millisecond data generation.</div>
+    <div style='font-size:9px; margin-top:15px; color:var(--p);'>STATUS: COUPLING_WITH_QI_CORE...</div>
+</div>
+<script>
+const canvas=document.getElementById('c'),ctx=canvas.getContext('2d');
+let w,h,t=0; function res(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;}res();
+function draw(){t++; ctx.fillStyle='rgba(0,0,0,0.15)'; ctx.fillRect(0,0,w,h); ctx.strokeStyle='var(--p)'; ctx.lineWidth=0.5;
+let r = Math.abs(Math.sin(t*0.01)*300);
+ctx.beginPath(); ctx.arc(Math.random()*w, Math.random()*h, 2, 0, Math.PI*2); ctx.stroke();
+requestAnimationFrame(draw);}draw();
+</script></body></html>
